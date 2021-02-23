@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0CF3D383882D205AFBF053 /* Pods_instaMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A69053FF3B8120EFD085109 /* Pods_instaMap.framework */; };
+		CE2E193E25E3BB6100A176EF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E193D25E3BB6100A176EF /* TabBarController.swift */; };
+		CE2E194225E3BD8100A176EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194125E3BD8100A176EF /* LoginViewController.swift */; };
+		CE2E194525E3BD9B00A176EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194425E3BD9B00A176EF /* HomeViewController.swift */; };
+		CE2E194825E3BDB800A176EF /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194725E3BDB800A176EF /* ImageSelectViewController.swift */; };
+		CE2E194B25E3BDD200A176EF /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194A25E3BDD200A176EF /* PostViewController.swift */; };
+		CE2E194E25E3BDEA00A176EF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194D25E3BDEA00A176EF /* SettingViewController.swift */; };
 		CE32FF7125E22BD900454DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FF7025E22BD900454DAE /* AppDelegate.swift */; };
 		CE32FF7325E22BD900454DAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FF7225E22BD900454DAE /* SceneDelegate.swift */; };
-		CE32FF7525E22BD900454DAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FF7425E22BD900454DAE /* ViewController.swift */; };
 		CE32FF7825E22BD900454DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF7625E22BD900454DAE /* Main.storyboard */; };
 		CE32FF7A25E22BDA00454DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF7925E22BDA00454DAE /* Assets.xcassets */; };
 		CE32FF7D25E22BDA00454DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF7B25E22BDA00454DAE /* LaunchScreen.storyboard */; };
+		CE32FF8725E2306D00454DAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A69053FF3B8120EFD085109 /* Pods_instaMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instaMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0D47C92C4C663F44D2FBE4 /* Pods-instaMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMap.debug.xcconfig"; path = "Target Support Files/Pods-instaMap/Pods-instaMap.debug.xcconfig"; sourceTree = "<group>"; };
+		CE2E193D25E3BB6100A176EF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CE2E194125E3BD8100A176EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE2E194425E3BD9B00A176EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE2E194725E3BDB800A176EF /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		CE2E194A25E3BDD200A176EF /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		CE2E194D25E3BDEA00A176EF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE32FF6D25E22BD900454DAE /* instaMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE32FF7025E22BD900454DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE32FF7225E22BD900454DAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE32FF7425E22BD900454DAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE32FF7725E22BD900454DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE32FF7925E22BDA00454DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE32FF7C25E22BDA00454DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE32FF7E25E22BDA00454DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D853DBE85B3BC5A58088DD90 /* Pods-instaMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMap.release.xcconfig"; path = "Target Support Files/Pods-instaMap/Pods-instaMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC0CF3D383882D205AFBF053 /* Pods_instaMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4719DCA535D3BE38B1B4A3C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B0D47C92C4C663F44D2FBE4 /* Pods-instaMap.debug.xcconfig */,
+				D853DBE85B3BC5A58088DD90 /* Pods-instaMap.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C19278C0DA7329A57F2C0D6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A69053FF3B8120EFD085109 /* Pods_instaMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE32FF6425E22BD900454DAE = {
 			isa = PBXGroup;
 			children = (
 				CE32FF6F25E22BD900454DAE /* instaMap */,
 				CE32FF6E25E22BD900454DAE /* Products */,
+				4719DCA535D3BE38B1B4A3C8 /* Pods */,
+				C19278C0DA7329A57F2C0D6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +94,17 @@
 			children = (
 				CE32FF7025E22BD900454DAE /* AppDelegate.swift */,
 				CE32FF7225E22BD900454DAE /* SceneDelegate.swift */,
-				CE32FF7425E22BD900454DAE /* ViewController.swift */,
+				CE2E194125E3BD8100A176EF /* LoginViewController.swift */,
+				CE2E194425E3BD9B00A176EF /* HomeViewController.swift */,
+				CE2E194725E3BDB800A176EF /* ImageSelectViewController.swift */,
+				CE2E194A25E3BDD200A176EF /* PostViewController.swift */,
+				CE2E194D25E3BDEA00A176EF /* SettingViewController.swift */,
+				CE2E193D25E3BB6100A176EF /* TabBarController.swift */,
 				CE32FF7625E22BD900454DAE /* Main.storyboard */,
 				CE32FF7925E22BDA00454DAE /* Assets.xcassets */,
 				CE32FF7B25E22BDA00454DAE /* LaunchScreen.storyboard */,
 				CE32FF7E25E22BDA00454DAE /* Info.plist */,
+				CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */,
 			);
 			path = instaMap;
 			sourceTree = "<group>";
@@ -74,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE32FF8125E22BDA00454DAE /* Build configuration list for PBXNativeTarget "instaMap" */;
 			buildPhases = (
+				5D7A1163691617C776632580 /* [CP] Check Pods Manifest.lock */,
 				CE32FF6925E22BD900454DAE /* Sources */,
 				CE32FF6A25E22BD900454DAE /* Frameworks */,
 				CE32FF6B25E22BD900454DAE /* Resources */,
+				86FC65E46F4B203723F7FF55 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,19 +171,67 @@
 				CE32FF7D25E22BDA00454DAE /* LaunchScreen.storyboard in Resources */,
 				CE32FF7A25E22BDA00454DAE /* Assets.xcassets in Resources */,
 				CE32FF7825E22BD900454DAE /* Main.storyboard in Resources */,
+				CE32FF8725E2306D00454DAE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D7A1163691617C776632580 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-instaMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86FC65E46F4B203723F7FF55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instaMap/Pods-instaMap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instaMap/Pods-instaMap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-instaMap/Pods-instaMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE32FF6925E22BD900454DAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE32FF7525E22BD900454DAE /* ViewController.swift in Sources */,
+				CE2E194B25E3BDD200A176EF /* PostViewController.swift in Sources */,
+				CE2E194825E3BDB800A176EF /* ImageSelectViewController.swift in Sources */,
 				CE32FF7125E22BD900454DAE /* AppDelegate.swift in Sources */,
+				CE2E193E25E3BB6100A176EF /* TabBarController.swift in Sources */,
+				CE2E194E25E3BDEA00A176EF /* SettingViewController.swift in Sources */,
+				CE2E194225E3BD8100A176EF /* LoginViewController.swift in Sources */,
 				CE32FF7325E22BD900454DAE /* SceneDelegate.swift in Sources */,
+				CE2E194525E3BD9B00A176EF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +375,7 @@
 		};
 		CE32FF8225E22BDA00454DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0D47C92C4C663F44D2FBE4 /* Pods-instaMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,12 +389,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.techacademy.takeshi-2983.instaMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CE32FF8325E22BDA00454DAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D853DBE85B3BC5A58088DD90 /* Pods-instaMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,7 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.techacademy.takeshi-2983.instaMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
