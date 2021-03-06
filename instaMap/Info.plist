@@ -60,5 +60,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>本アプリは、画像の投稿及び編集のため、カメラの使用許可を求めます。</string>
+	<key>Privacy - Location When In Use Usage Discription</key>
+	<string>位置情報を使いますけど、いいですよね？</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>写真の位置情報取得したいのですが。。。</string>
 </dict>
 </plist>

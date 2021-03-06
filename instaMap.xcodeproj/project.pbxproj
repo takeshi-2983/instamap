@@ -20,6 +20,12 @@
 		CE32FF7A25E22BDA00454DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF7925E22BDA00454DAE /* Assets.xcassets */; };
 		CE32FF7D25E22BDA00454DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF7B25E22BDA00454DAE /* LaunchScreen.storyboard */; };
 		CE32FF8725E2306D00454DAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */; };
+		CE42216A25E8D355008628B5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42216925E8D355008628B5 /* Const.swift */; };
+		CE5CD04F25ECDB8F00930F19 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD04E25ECDB8F00930F19 /* PostData.swift */; };
+		CE5CD05325F106F400930F19 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD05125F106F400930F19 /* PostTableViewCell.swift */; };
+		CE5CD05425F106F400930F19 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5CD05225F106F400930F19 /* PostTableViewCell.xib */; };
+		CE5CD05E25F1C99B00930F19 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD05D25F1C99B00930F19 /* PhotoViewController.swift */; };
+		CE67BFA925E4ECF70005B510 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BFA825E4ECF70005B510 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,12 @@
 		CE32FF7C25E22BDA00454DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE32FF7E25E22BDA00454DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE42216925E8D355008628B5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		CE5CD04E25ECDB8F00930F19 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		CE5CD05125F106F400930F19 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		CE5CD05225F106F400930F19 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		CE5CD05D25F1C99B00930F19 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		CE67BFA825E4ECF70005B510 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D853DBE85B3BC5A58088DD90 /* Pods-instaMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMap.release.xcconfig"; path = "Target Support Files/Pods-instaMap/Pods-instaMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +111,13 @@
 				CE2E194725E3BDB800A176EF /* ImageSelectViewController.swift */,
 				CE2E194A25E3BDD200A176EF /* PostViewController.swift */,
 				CE2E194D25E3BDEA00A176EF /* SettingViewController.swift */,
+				CE67BFA825E4ECF70005B510 /* MapViewController.swift */,
+				CE5CD05D25F1C99B00930F19 /* PhotoViewController.swift */,
 				CE2E193D25E3BB6100A176EF /* TabBarController.swift */,
+				CE5CD05125F106F400930F19 /* PostTableViewCell.swift */,
+				CE5CD05225F106F400930F19 /* PostTableViewCell.xib */,
+				CE42216925E8D355008628B5 /* Const.swift */,
+				CE5CD04E25ECDB8F00930F19 /* PostData.swift */,
 				CE32FF7625E22BD900454DAE /* Main.storyboard */,
 				CE32FF7925E22BDA00454DAE /* Assets.xcassets */,
 				CE32FF7B25E22BDA00454DAE /* LaunchScreen.storyboard */,
@@ -169,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE32FF7D25E22BDA00454DAE /* LaunchScreen.storyboard in Resources */,
+				CE5CD05425F106F400930F19 /* PostTableViewCell.xib in Resources */,
 				CE32FF7A25E22BDA00454DAE /* Assets.xcassets in Resources */,
 				CE32FF7825E22BD900454DAE /* Main.storyboard in Resources */,
 				CE32FF8725E2306D00454DAE /* GoogleService-Info.plist in Resources */,
@@ -228,10 +247,15 @@
 				CE2E194825E3BDB800A176EF /* ImageSelectViewController.swift in Sources */,
 				CE32FF7125E22BD900454DAE /* AppDelegate.swift in Sources */,
 				CE2E193E25E3BB6100A176EF /* TabBarController.swift in Sources */,
+				CE67BFA925E4ECF70005B510 /* MapViewController.swift in Sources */,
 				CE2E194E25E3BDEA00A176EF /* SettingViewController.swift in Sources */,
 				CE2E194225E3BD8100A176EF /* LoginViewController.swift in Sources */,
 				CE32FF7325E22BD900454DAE /* SceneDelegate.swift in Sources */,
 				CE2E194525E3BD9B00A176EF /* HomeViewController.swift in Sources */,
+				CE5CD04F25ECDB8F00930F19 /* PostData.swift in Sources */,
+				CE42216A25E8D355008628B5 /* Const.swift in Sources */,
+				CE5CD05325F106F400930F19 /* PostTableViewCell.swift in Sources */,
+				CE5CD05E25F1C99B00930F19 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
