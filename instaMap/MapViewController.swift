@@ -64,7 +64,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
                     annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
                     //ピンにメッセージを付随する
                     annotation.title = postData.caption
-                    annotation.subtitle = "詳細（仮）"
+                    annotation.subtitle = postData.comment
                     
                     //カスタマイズした変数に代入
                     annotation.postdata = postData

@@ -13,11 +13,9 @@ class PostViewController: UIViewController {
     
     var image: UIImage!
     
-    //var latitude : Double = 0.0
-    //var longitude : Double = 0.0
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var commentField: UITextField!
     
     // 投稿ボタンをタップしたときに呼ばれるメソッド
     @IBAction func handlePostButton(_ sender: Any) {
@@ -49,7 +47,8 @@ class PostViewController: UIViewController {
                 "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
                 "latitude": latitude,
-                "longitude": longitude
+                "longitude": longitude,
+                "comment": self.commentField.text!
                 ] as [String : Any]
             postRef.setData(postDic)
             // HUDで投稿完了を表示する

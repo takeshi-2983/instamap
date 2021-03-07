@@ -12,6 +12,7 @@ class PostData: NSObject {
     var id: String
     var name: String?
     var caption: String?
+    var comment: String?
     var date: Date?
     var latitude : Double?
     var longitude : Double?
@@ -27,6 +28,8 @@ class PostData: NSObject {
         self.name = postDic["name"] as? String
 
         self.caption = postDic["caption"] as? String
+        
+        self.comment = postDic["comment"] as? String
         
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()

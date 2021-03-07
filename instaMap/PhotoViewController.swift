@@ -13,10 +13,12 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var Photo: UIImageView!
     
     var postdata : PostData!
- 
-
+    
     
     @IBOutlet weak var caption: UILabel!
+    @IBOutlet weak var data: UILabel!
+    @IBOutlet weak var comment: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +29,27 @@ class PhotoViewController: UIViewController {
         
         // キャプションの表示
         self.caption.text = "\(postdata.name!) : \(postdata.caption!)"
-
+        // 日時の表示
+        self.data.text = ""
+        if let data = postdata.date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateString = formatter.string(from: data)
+            self.data.text = dateString
+        }
         
-        // Do any additional setup after loading the view.
+
+        // コメントの表示
+        if postdata.comment == nil {
+        self.comment.text = ""
+        } else {
+        self.comment.text = "\(postdata.name!) : \(postdata.comment!)"
+        }
+
     }
     
     
     @IBAction func Cancel(_ sender: Any) {
-        
-        
            // Map画面に戻る
            self.dismiss(animated: true, completion: nil)
     }

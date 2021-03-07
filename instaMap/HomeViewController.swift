@@ -28,6 +28,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          // カスタムセルを登録する
          let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
          tableView.register(nib, forCellReuseIdentifier: "Cell")
+        
+        //セルの高さの調整
+        tableView.rowHeight = 400
+//        tableView.rowHeight = UITableView.automaticDimension
 
     }
     
