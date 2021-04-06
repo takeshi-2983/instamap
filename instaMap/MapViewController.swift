@@ -8,9 +8,30 @@
 import UIKit
 import MapKit
 import Firebase
+import CoreLocation
 
 class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate {
-    //var tapCount: Int = 0
+    
+    var locationManager = CLLocationManager()
+    
+    @IBOutlet weak var trackingButton: UIBarButtonItem!
+    
+    //トラッキングモードを切り替える
+    @IBAction func tapTrackingButton(_ sender: UIBarButtonItem) {
+        switch dispMap.userTrackingMode {
+        case .none:
+            //None からFollow
+            dispMap.setUserTrackingMode(.follow, animated: true)
+            //トラッキングボタンを変更する
+            trackingButton.image = UIImage(named: "location.fill")
+        case .follow:
+            dispMap.setUserTrackingMode(.followWithHeading, animated: true)
+            trackingButton.image = UIImage(named: "location.north.line.fill")
+        case .followWithHeading:
+            dispMap.setUserTrackingMode(.none, animated: true)
+            trackingButton.image = UIImage(named: "location")
+        }
+    }
     
     
     
@@ -26,8 +47,11 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //アプリ利用中の位置情報の利用許可を得る
+        locationManager.requestWhenInUseAuthorization()
+        
         inputText.delegate = self
-        self.dispMap.delegate = self
+        dispMap.delegate = self
  
     }
     

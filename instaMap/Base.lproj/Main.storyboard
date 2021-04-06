@@ -124,44 +124,60 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D8x-Qn-fxk">
                                 <rect key="frame" x="0.0" y="78" width="414" height="735"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPX-DB-1QY">
-                                <rect key="frame" x="373" y="781" width="25" height="24"/>
-                                <connections>
-                                    <action selector="changeMapButton:" destination="vyU-UK-CeJ" eventType="touchUpInside" id="E8u-B6-tB9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEA-Xr-bYf">
-                                <rect key="frame" x="373" y="749" width="25" height="24"/>
-                                <connections>
-                                    <action selector="MapOpen:" destination="vyU-UK-CeJ" eventType="touchUpInside" id="Vi6-sN-0hs"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8K-q6-brx">
+                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" image="location" catalog="system" id="aed-X8-wbH">
+                                        <connections>
+                                            <action selector="tapTrackingButton:" destination="vyU-UK-CeJ" id="S31-bh-ovs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="P3H-f6-pcF">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="jEA-Xr-bYf">
+                                            <rect key="frame" x="49.5" y="10" width="25" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-400" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="MapOpen:" destination="vyU-UK-CeJ" eventType="touchUpInside" id="Vi6-sN-0hs"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="Zch-rc-FgO">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="vPX-DB-1QY">
+                                            <rect key="frame" x="74.5" y="10" width="25" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-500" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="changeMapButton:" destination="vyU-UK-CeJ" eventType="touchUpInside" id="E8u-B6-tB9"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dfb-ct-SMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dfb-ct-SMf" firstAttribute="bottom" secondItem="vPX-DB-1QY" secondAttribute="bottom" constant="8" id="1I0-Eq-Wcl"/>
                             <constraint firstItem="dfb-ct-SMf" firstAttribute="trailing" secondItem="4bo-31-w9N" secondAttribute="trailing" id="AOL-tn-dQm"/>
                             <constraint firstItem="4bo-31-w9N" firstAttribute="top" secondItem="dfb-ct-SMf" secondAttribute="top" id="M49-h1-A9X"/>
-                            <constraint firstItem="dfb-ct-SMf" firstAttribute="trailing" secondItem="jEA-Xr-bYf" secondAttribute="trailing" constant="16" id="RIF-cz-xa3"/>
                             <constraint firstItem="D8x-Qn-fxk" firstAttribute="leading" secondItem="dfb-ct-SMf" secondAttribute="leading" id="X42-Vi-emr"/>
-                            <constraint firstItem="vPX-DB-1QY" firstAttribute="top" secondItem="jEA-Xr-bYf" secondAttribute="bottom" constant="8" id="Yjv-RV-dW0"/>
                             <constraint firstItem="D8x-Qn-fxk" firstAttribute="top" secondItem="4bo-31-w9N" secondAttribute="bottom" id="a2a-Qf-XCe"/>
                             <constraint firstItem="4bo-31-w9N" firstAttribute="leading" secondItem="dfb-ct-SMf" secondAttribute="leading" id="eYl-4f-zR4"/>
                             <constraint firstItem="dfb-ct-SMf" firstAttribute="trailing" secondItem="D8x-Qn-fxk" secondAttribute="trailing" id="hM4-9s-3Ga"/>
                             <constraint firstItem="dfb-ct-SMf" firstAttribute="bottom" secondItem="D8x-Qn-fxk" secondAttribute="bottom" id="itU-95-bup"/>
-                            <constraint firstItem="dfb-ct-SMf" firstAttribute="trailing" secondItem="vPX-DB-1QY" secondAttribute="trailing" constant="16" id="wDP-xe-y86"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="マップ" image="mappin.and.ellipse" catalog="system" id="beH-1w-RZ1"/>
                     <connections>
                         <outlet property="dispMap" destination="D8x-Qn-fxk" id="lWm-Od-ubd"/>
                         <outlet property="inputText" destination="4bo-31-w9N" id="tNl-z6-Uwi"/>
+                        <outlet property="trackingButton" destination="aed-X8-wbH" id="9eK-4e-Ook"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3c-sw-dMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1384" y="822"/>
+            <point key="canvasLocation" x="-1384.0579710144928" y="821.65178571428567"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="iJW-2b-I7g">
@@ -430,6 +446,7 @@
         <image name="btn" width="300" height="40"/>
         <image name="camera" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="setting" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
