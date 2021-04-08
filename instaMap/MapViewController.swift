@@ -10,9 +10,10 @@ import MapKit
 import Firebase
 import CoreLocation
 
-class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
+    var myLocationManager = CLLocationManager()
     
     @IBOutlet weak var trackingButton: UIBarButtonItem!
     
@@ -33,8 +34,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
         }
     }
     
-    
-    
     var postData : PostData!
     var postDataA : PostData!
    
@@ -52,12 +51,21 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
         
         inputText.delegate = self
         dispMap.delegate = self
- 
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+       if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("DEBUG_PRINT: viewWillAppear")
+        
 
         if Auth.auth().currentUser != nil {
             // ログイン済み
@@ -176,15 +184,36 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
         }
     }
     
-  
+    //現在位置の取得
+    @IBAction func inlocation(_ sender: Any) {
+    
+        print("位置情報を固定？")
+        locationManager.stopUpdatingLocation()
+    }
+
+        // 位置情報の取得
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+            print("locations = \(locValue.latitude) \(locValue.longitude)")
+            
+            let InAnnotation = InCustomAnnotation()
+            //ピンの位置
+            let latitude = locValue.latitude
+            let longitude = locValue.longitude
+            InAnnotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+            //ピンにメッセージを付随する
+            InAnnotation.title = "現在位置"
+            InAnnotation.subtitle = ""
+    
+            
+            //ピンを追加
+            self.dispMap.addAnnotation(InAnnotation)
+            
+           }
     
     @IBAction func MapOpen(_ sender: Any) {
         
-    
-        
     }
-
-    
     
 }
 
@@ -203,7 +232,7 @@ extension MapViewController {
         button.setTitle("詳細", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = UIColor.blue
-//        button.addTarget(self, action: #selector(sendLocation), for: .touchUpInside)
+        //button.addTarget(self, action: #selector(sendLocation), for: .touchUpInside)
         //右側にボタンを追加
         pinView.rightCalloutAccessoryView = button
         return pinView
@@ -228,3 +257,9 @@ class CustomAnnotation: MKPointAnnotation {
     var postdata : PostData!
     
 }
+
+class InCustomAnnotation: MKPointAnnotation {
+    var pinColor:UIColor = UIColor.blue
+    
+}
+

@@ -153,6 +153,18 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" id="tWt-dj-HGp">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="ocw-bG-RDj">
+                                            <rect key="frame" x="99.5" y="4.5" width="41" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="paperplane" catalog="system">
+                                                <attributedString key="attributedTitle"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="inlocation:" destination="vyU-UK-CeJ" eventType="touchUpInside" id="guQ-S7-7a2"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -448,6 +460,7 @@
         <image name="home" width="25" height="25"/>
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="setting" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
