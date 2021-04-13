@@ -49,19 +49,21 @@ class PhotoViewController: UIViewController {
     }
     
     
+    
+    
+    
     @IBAction func Cancel(_ sender: Any) {
            // Map画面に戻る
            self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func commentChenge(_ sender: Any) {
+        let CommentChengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "commentchenge") as! CommentChengeViewController
+        
+        CommentChengeViewController.postdata = postdata
+         self.present(CommentChengeViewController, animated: true, completion: nil)
+    
     }
-    */
+    
 
 }

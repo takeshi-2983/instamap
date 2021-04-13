@@ -85,9 +85,33 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のボタンのアクションをソースコードで設定する
          cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
+        // ToPhotoScrollボタンを設定
+        cell.ToPhotoScrollView.addTarget(self, action: #selector(toPhoto(_:forEvent:)), for: .touchUpInside)
+        
 
          return cell
      }
+    
+    // ToPhotoXcrollボタンが押されたときの設定
+    @objc func toPhoto(_ sender: UIButton, forEvent event: UIEvent) {
+        print("toPhotoボタンがタップされました")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+
+        
+        let PhotoScrollViewController = self.storyboard?.instantiateViewController(withIdentifier: "photoScroll") as! PhotoScrollViewController
+        
+        PhotoScrollViewController.postdata = postData
+         self.present(PhotoScrollViewController, animated: true, completion: nil)
+
+        
+    }
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
         @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {

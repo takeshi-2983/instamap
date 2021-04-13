@@ -13,7 +13,7 @@ import CoreLocation
 class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
-    var myLocationManager = CLLocationManager()
+//    var myLocationManager = CLLocationManager()
     
     @IBOutlet weak var trackingButton: UIBarButtonItem!
     
@@ -24,13 +24,13 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
             //None からFollow
             dispMap.setUserTrackingMode(.follow, animated: true)
             //トラッキングボタンを変更する
-            trackingButton.image = UIImage(named: "location.fill")
+            trackingButton.image = UIImage(systemName: "location.fill")
         case .follow:
             dispMap.setUserTrackingMode(.followWithHeading, animated: true)
-            trackingButton.image = UIImage(named: "location.north.line.fill")
+            trackingButton.image = UIImage(systemName: "location.north.line.fill")
         case .followWithHeading:
             dispMap.setUserTrackingMode(.none, animated: true)
-            trackingButton.image = UIImage(named: "location")
+            trackingButton.image = UIImage(systemName: "location")
         }
     }
     
@@ -117,6 +117,8 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
                 //tableView.reloadData()
             }
         }
+        //スケールを表示させたいんだけど、うまく行かない。。
+        //dispMap.showsScale = true
     }
 
     
@@ -184,34 +186,36 @@ class MapViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegat
         }
     }
     
-    //現在位置の取得
-    @IBAction func inlocation(_ sender: Any) {
-    
-        print("位置情報を固定？")
-        locationManager.stopUpdatingLocation()
-    }
-
-        // 位置情報の取得
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
-            
-            let InAnnotation = InCustomAnnotation()
-            //ピンの位置
-            let latitude = locValue.latitude
-            let longitude = locValue.longitude
-            InAnnotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-            //ピンにメッセージを付随する
-            InAnnotation.title = "現在位置"
-            InAnnotation.subtitle = ""
-    
-            
-            //ピンを追加
-            self.dispMap.addAnnotation(InAnnotation)
-            
-           }
+//    //現在位置の取得
+//    @IBAction func inlocation(_ sender: Any) {
+//
+//        print("位置情報を固定？")
+//        locationManager.stopUpdatingLocation()
+//    }
+//
+//        // 位置情報の取得
+//        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//            guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+//            print("locations = \(locValue.latitude) \(locValue.longitude)")
+//
+//            let InAnnotation = InCustomAnnotation()
+//            //ピンの位置
+//            let latitude = locValue.latitude
+//            let longitude = locValue.longitude
+//            InAnnotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+//            //ピンにメッセージを付随する
+//            InAnnotation.title = "現在位置"
+//            InAnnotation.subtitle = ""
+//
+//
+//            //ピンを追加
+//            self.dispMap.addAnnotation(InAnnotation)
+//
+//           }
     
     @IBAction func MapOpen(_ sender: Any) {
+        //プラスボタン　すべてのピンのタイトルを表示させたい。
+        dispMap.selectAnnotation(dispMap.annotations[0], animated: true)
         
     }
     
@@ -238,7 +242,7 @@ extension MapViewController {
         return pinView
     }
     
-    //Click on left or right button
+    //詳細ボタンを押したときに実行される→PhotoViewControllerへ移動（データ受け渡し）
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let pin = view.annotation as? CustomAnnotation {
             
@@ -253,13 +257,12 @@ extension MapViewController {
 }
 
 class CustomAnnotation: MKPointAnnotation {
-
     var postdata : PostData!
-    
 }
 
-class InCustomAnnotation: MKPointAnnotation {
-    var pinColor:UIColor = UIColor.blue
-    
-}
+//class InCustomAnnotation: MKPointAnnotation {
+//    var pinColor:UIColor = UIColor.blue
+//
+//}
+
 

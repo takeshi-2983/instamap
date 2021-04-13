@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC0CF3D383882D205AFBF053 /* Pods_instaMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A69053FF3B8120EFD085109 /* Pods_instaMap.framework */; };
+		CE1F095A26244B4F00A721BB /* PhotoScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F095926244B4F00A721BB /* PhotoScrollViewController.swift */; };
 		CE2E193E25E3BB6100A176EF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E193D25E3BB6100A176EF /* TabBarController.swift */; };
 		CE2E194225E3BD8100A176EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194125E3BD8100A176EF /* LoginViewController.swift */; };
 		CE2E194525E3BD9B00A176EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E194425E3BD9B00A176EF /* HomeViewController.swift */; };
@@ -21,6 +22,7 @@
 		CE32FF7D25E22BDA00454DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF7B25E22BDA00454DAE /* LaunchScreen.storyboard */; };
 		CE32FF8725E2306D00454DAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */; };
 		CE42216A25E8D355008628B5 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42216925E8D355008628B5 /* Const.swift */; };
+		CE42B709262161EA00598065 /* CommentChengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42B708262161EA00598065 /* CommentChengeViewController.swift */; };
 		CE5CD04F25ECDB8F00930F19 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD04E25ECDB8F00930F19 /* PostData.swift */; };
 		CE5CD05325F106F400930F19 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD05125F106F400930F19 /* PostTableViewCell.swift */; };
 		CE5CD05425F106F400930F19 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5CD05225F106F400930F19 /* PostTableViewCell.xib */; };
@@ -31,6 +33,7 @@
 /* Begin PBXFileReference section */
 		1A69053FF3B8120EFD085109 /* Pods_instaMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instaMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0D47C92C4C663F44D2FBE4 /* Pods-instaMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaMap.debug.xcconfig"; path = "Target Support Files/Pods-instaMap/Pods-instaMap.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1F095926244B4F00A721BB /* PhotoScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScrollViewController.swift; sourceTree = "<group>"; };
 		CE2E193D25E3BB6100A176EF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CE2E194125E3BD8100A176EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE2E194425E3BD9B00A176EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		CE32FF7E25E22BDA00454DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE32FF8625E2306D00454DAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE42216925E8D355008628B5 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		CE42B708262161EA00598065 /* CommentChengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentChengeViewController.swift; sourceTree = "<group>"; };
 		CE5CD04E25ECDB8F00930F19 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		CE5CD05125F106F400930F19 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		CE5CD05225F106F400930F19 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				CE2E194D25E3BDEA00A176EF /* SettingViewController.swift */,
 				CE67BFA825E4ECF70005B510 /* MapViewController.swift */,
 				CE5CD05D25F1C99B00930F19 /* PhotoViewController.swift */,
+				CE42B708262161EA00598065 /* CommentChengeViewController.swift */,
+				CE1F095926244B4F00A721BB /* PhotoScrollViewController.swift */,
 				CE2E193D25E3BB6100A176EF /* TabBarController.swift */,
 				CE5CD05125F106F400930F19 /* PostTableViewCell.swift */,
 				CE5CD05225F106F400930F19 /* PostTableViewCell.xib */,
@@ -245,6 +251,7 @@
 			files = (
 				CE2E194B25E3BDD200A176EF /* PostViewController.swift in Sources */,
 				CE2E194825E3BDB800A176EF /* ImageSelectViewController.swift in Sources */,
+				CE42B709262161EA00598065 /* CommentChengeViewController.swift in Sources */,
 				CE32FF7125E22BD900454DAE /* AppDelegate.swift in Sources */,
 				CE2E193E25E3BB6100A176EF /* TabBarController.swift in Sources */,
 				CE67BFA925E4ECF70005B510 /* MapViewController.swift in Sources */,
@@ -252,6 +259,7 @@
 				CE2E194225E3BD8100A176EF /* LoginViewController.swift in Sources */,
 				CE32FF7325E22BD900454DAE /* SceneDelegate.swift in Sources */,
 				CE2E194525E3BD9B00A176EF /* HomeViewController.swift in Sources */,
+				CE1F095A26244B4F00A721BB /* PhotoScrollViewController.swift in Sources */,
 				CE5CD04F25ECDB8F00930F19 /* PostData.swift in Sources */,
 				CE42216A25E8D355008628B5 /* Const.swift in Sources */,
 				CE5CD05325F106F400930F19 /* PostTableViewCell.swift in Sources */,

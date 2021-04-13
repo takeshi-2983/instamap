@@ -63,15 +63,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axt-Mn-vSO">
+                        <rect key="frame" x="140" y="349" width="59" height="22"/>
+                        <state key="normal" image="photo.tv" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="JSL-AA-wlN" firstAttribute="leading" secondItem="xSj-9r-kYk" secondAttribute="trailing" constant="10" id="3HA-Dp-f3x"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Axt-Mn-vSO" secondAttribute="trailing" constant="134" id="6j2-M5-OoQ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="hWx-j1-5c8" secondAttribute="trailing" constant="10" id="9nW-tK-8AL"/>
                     <constraint firstItem="OLI-Kg-av9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="Cug-JP-0pV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="qRC-Lf-D0N" secondAttribute="trailing" constant="10" id="K3c-uy-RwN"/>
                     <constraint firstItem="hZv-fD-azw" firstAttribute="top" secondItem="qRC-Lf-D0N" secondAttribute="bottom" constant="10" id="KJZ-lE-FPl"/>
                     <constraint firstItem="xSj-9r-kYk" firstAttribute="top" secondItem="OLI-Kg-av9" secondAttribute="bottom" constant="10" id="LAH-Mh-Rf2"/>
                     <constraint firstItem="qRC-Lf-D0N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="PV7-Mf-szy"/>
+                    <constraint firstItem="Axt-Mn-vSO" firstAttribute="top" secondItem="OLI-Kg-av9" secondAttribute="bottom" constant="15" id="Psn-IC-qJo"/>
                     <constraint firstItem="hWx-j1-5c8" firstAttribute="leading" secondItem="JSL-AA-wlN" secondAttribute="trailing" constant="10" id="Qgv-pr-wta"/>
                     <constraint firstItem="qRC-Lf-D0N" firstAttribute="top" secondItem="xSj-9r-kYk" secondAttribute="bottom" constant="10" id="Vp3-mh-U1c"/>
                     <constraint firstItem="hZv-fD-azw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Xgn-EX-eLd"/>
@@ -82,10 +88,12 @@
                     <constraint firstItem="OLI-Kg-av9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qEw-Ac-VKc"/>
                     <constraint firstItem="JSL-AA-wlN" firstAttribute="centerY" secondItem="xSj-9r-kYk" secondAttribute="centerY" id="toK-Wx-1HO"/>
                     <constraint firstAttribute="bottomMargin" secondItem="hZv-fD-azw" secondAttribute="bottom" constant="10" id="uT1-jt-3w7"/>
+                    <constraint firstItem="Axt-Mn-vSO" firstAttribute="leading" secondItem="JSL-AA-wlN" secondAttribute="trailing" constant="20" id="zwE-KV-dJn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="ToPhotoScrollView" destination="Axt-Mn-vSO" id="uQB-d1-qIj"/>
                 <outlet property="captionLabel" destination="qRC-Lf-D0N" id="tr3-pn-fmL"/>
                 <outlet property="commentLabel" destination="hZv-fD-azw" id="1VT-H5-fvS"/>
                 <outlet property="dateLabel" destination="hWx-j1-5c8" id="rXf-Lq-7kV"/>
@@ -98,5 +106,6 @@
     </objects>
     <resources>
         <image name="like_none" width="40" height="40"/>
+        <image name="photo.tv" catalog="system" width="128" height="97"/>
     </resources>
 </document>
