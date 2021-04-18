@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import FirebaseUI
 
 class PhotoScrollViewController: UIViewController {
 
     var postdata : PostData!
     /// ページ数(サンプルのため固定)
-    private let numberOfPages = 10
+    private let numberOfPages = 3
+    
+    //　firestoreダウンロード（アクセス）回収の制限用のカウンター
+    var number :Int = 0
     
     @IBOutlet private weak var mainScrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
@@ -22,10 +26,15 @@ class PhotoScrollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageControl()
+        
     }
  
     override func viewDidLayoutSubviews() {
          super.viewDidLayoutSubviews()
+        
+        //ダウンロード回数用のカウンターをゼロへ
+         number = 0
+        
          setupMainScrollView()
          (0..<numberOfPages).forEach { page in
              let subScrollView = generateSubScrollView(at: page)
@@ -35,6 +44,7 @@ class PhotoScrollViewController: UIViewController {
          }
      }
      
+    //ページコントロールを設定する
      private func setupPageControl() {
          pageControl.numberOfPages = numberOfPages
          pageControl.currentPage = currentPage
@@ -48,7 +58,7 @@ class PhotoScrollViewController: UIViewController {
      
      private func setupMainScrollView() {
          mainScrollView.delegate = self
-         mainScrollView.isPagingEnabled = true
+         mainScrollView.isPagingEnabled = true  //ページ送りする
          mainScrollView.showsVerticalScrollIndicator = false
          mainScrollView.showsHorizontalScrollIndicator = false
          // コンテンツ幅 = ページ数 x ページ幅
@@ -83,7 +93,7 @@ class PhotoScrollViewController: UIViewController {
          imageView.contentMode = .scaleAspectFill
          imageView.clipsToBounds = true
          imageView.image = image(at: page)
-         
+        //at: page
          return imageView
      }
      
@@ -91,7 +101,7 @@ class PhotoScrollViewController: UIViewController {
      @objc private func didValueChangePageControl() {
          currentPage = pageControl.currentPage
          let x = calculateX(at: currentPage)
-         mainScrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+         mainScrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)//スクロール開始位置の設定
      }
      
      /// サブスクロールビューがダブルタップされた時
@@ -152,11 +162,101 @@ class PhotoScrollViewController: UIViewController {
              subScrollView.setZoomScale(subScrollView.minimumZoomScale, animated: false)
          }
      }
-     
-     private func image(at page: Int) -> UIImage? {
-         return UIImage(named: "\(page)")
-     }
- }
+    
+//    var a:UIImage!
+//    var ImageTo :UIImage!
+//     private func image(at page: Int) -> UIImage? {
+//        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postdata.caption!).child("0.jpg")
+//
+//        guard let url = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("savingImage.jpeg") else {return a}
+//        print("URL取得")
+//        print(url)
+//
+//        // Download to the local filesystem
+//        let downloadTask = imageRef.write(toFile: url){ url, error in
+//            if let error = error {
+//              // Uh-oh, an error occurred!
+//                self.ImageTo = UIImage()
+//                print("ローカル保存できていない？")
+//            } else {
+//              // Local file URL for "images/island.jpg" is returned
+//              // return UIImage(url:url)
+//
+//                print(type(of: url))
+//                //URLをStringへ
+//                let url_str = String(contentsOf: url)
+////               self.ImageTo = UIImage(url: url)
+//                print("ローカル保存できている？")
+//            }
+//          }
+//        //return UIImage(named: "\(page)")
+//        return self.ImageTo
+//     }
+    
+    private func image(at page: Int) -> UIImage? {
+       // Firebaseから画像を取得
+       // (すでにダウンロードしている)
+       let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postdata.caption!).child("\(page).jpg")
+
+       // 保存するローカルパスを設定
+       guard let url = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("\(page).jpeg") else {
+       //ここは例外処理の記述
+        return UIImage() /* 保存先パスが取得できない場合は、UIImage()を返す */  }
+        
+//        //ここは保存先パスが取得できた場合の処理
+//        imageRef.write(toFile: url)
+//        print("多分ここで保存したはず。このメーセージ分だけfirestoreの読み取り処理が実行されているかも")
+       // 保存するローカルパスを文字列に変換
+       let url_str = url.absoluteString
+       print("保存先パス取得")
+       print(url_str)
+//       do {
+//        //エラーメッセージ和訳　try'式内で関数をスローする呼び出しは発生しません　意味不明。。
+//        try imageRef.write(toFile: url)
+//        return UIImage(url: url_str)
+//       } catch {
+//        //いまのままだと、エラーにならないので、Catchには処理が進まないらしい。
+//         print(error)
+//         return UIImage()
+//       }
+        
+        //firestoreの読み取り制限にひっかかりたくないので、ダウンロード回数制限を一応設ける。多分意味無い。
+        number = number + 1
+        if number < 4 {
+        // ここでローカルに保存している？
+            let downloadTask = imageRef.write(toFile: url) { url, error in
+            if error != nil {
+            // Uh-oh, an error occurred!
+            print("error　読み取り不可")
+          } else {
+            // Local file URL for "images/island.jpg" is returned
+            print("読み取りOK")
+
+          }
+        }
+        return UIImage(url: url_str)
+        } else {
+        print("アクセス制限超えてます！")
+        }
+        
+        return UIImage()
+     }//image関数ここまで
+    
+}
+    
+extension UIImage {
+    public convenience init(url: String) {
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            self.init(data: data)!
+            return
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        self.init()
+    }
+}
 
  extension PhotoScrollViewController: UIScrollViewDelegate {
      

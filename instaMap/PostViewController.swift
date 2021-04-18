@@ -12,6 +12,7 @@ import SVProgressHUD
 class PostViewController: UIViewController {
     
     var image: UIImage!
+    var page:Int = 1
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -23,13 +24,18 @@ class PostViewController: UIViewController {
         let imageData = image.jpegData(compressionQuality: 0.75)
         // 画像と投稿データの保存場所を定義する
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
-        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + ".jpg")
+        //テーブル一覧用のデータ保存場所
+        let imageRefHome = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + ".jpg")
+        //PhotoScrollViewの最初のスクロール（ｐ０）画面用のデータ保存場所
+        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(self.textField.text!).child("0.jpg")
+        //PhotoScrollViewの次のスクロール（ｐ１）画面用のデータ保存場所
+        let nextImageRef = Storage.storage().reference().child(Const.ImagePath).child(self.textField.text!).child("\(page).jpg")
         // HUDで投稿処理中の表示を開始
         SVProgressHUD.show()
         // Storageに画像をアップロードする
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
-        imageRef.putData(imageData!, metadata: metadata) { (metadata, error) in
+        imageRefHome.putData(imageData!, metadata: metadata) { (metadata, error) in
             if error != nil {
                 // 画像のアップロード失敗
                 print(error!)
@@ -38,6 +44,9 @@ class PostViewController: UIViewController {
                 UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                 return
             }
+            //PhotoScrollViewの最初のスクロール（ｐ０）画面用のデータを保存
+            imageRef.putData(imageData!, metadata: metadata)
+            
             // FireStoreに投稿データを保存する
             let name = Auth.auth().currentUser?.displayName
             let latitude = UserDefaults.standard.double(forKey: "latitude")
@@ -53,8 +62,19 @@ class PostViewController: UIViewController {
             postRef.setData(postDic)
             // HUDで投稿完了を表示する
             SVProgressHUD.showSuccess(withStatus: "投稿しました")
+            
+            //次の写真投稿画面（NextPostViewController)へ画面移管する
+            let nextPostViewController = self.storyboard?.instantiateViewController(withIdentifier: "NextPost") as! NextPostViewController
+            nextPostViewController.nextImageRef = nextImageRef
+            
+            self.page = self.page + 1
+            nextPostViewController.page = self.page
+            
+            self.present(nextPostViewController, animated: true, completion: nil)
+
+            
             // 投稿処理が完了したので先頭画面に戻る
-           UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+//           UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
         }
 
     }

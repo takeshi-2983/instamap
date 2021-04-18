@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if Auth.auth().currentUser != nil {
                     // ログイン済み
                     if listener == nil {
-                        // listener未登録なら、登録してスナップショットを受信する
+                        // listener未登録なら、登録してスナップショットを受信する 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　多分ここの部分の修正が必要
                         let postsRef = Firestore.firestore().collection(Const.PostPath).order(by: "date", descending: true)
                         listener = postsRef.addSnapshotListener() { (querySnapshot, error) in
                             if let error = error {
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          return cell
      }
     
-    // ToPhotoXcrollボタンが押されたときの設定
+    // ToPhotoScrollボタンが押されたときの設定
     @objc func toPhoto(_ sender: UIButton, forEvent event: UIEvent) {
         print("toPhotoボタンがタップされました")
         
@@ -104,13 +104,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
 
-        
+        //PhotoScrollViewへ移動
         let PhotoScrollViewController = self.storyboard?.instantiateViewController(withIdentifier: "photoScroll") as! PhotoScrollViewController
         
         PhotoScrollViewController.postdata = postData
          self.present(PhotoScrollViewController, animated: true, completion: nil)
-
-        
     }
     
     // セル内のボタンがタップされた時に呼ばれるメソッド

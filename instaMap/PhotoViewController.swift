@@ -19,6 +19,14 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var data: UILabel!
     @IBOutlet weak var comment: UILabel!
     
+    //PhotoScrollViewに移行できるようにする？
+    @IBAction func scrollView(_ sender: Any) {
+        let PhotoScrollViewController = self.storyboard?.instantiateViewController(withIdentifier: "photoScroll") as! PhotoScrollViewController
+        
+        PhotoScrollViewController.postdata = postdata
+         self.present(PhotoScrollViewController, animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

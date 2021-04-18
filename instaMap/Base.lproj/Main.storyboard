@@ -83,7 +83,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMc-Ii-Zbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431.8840579710145" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1507" y="822"/>
+        </scene>
+        <!--Next Post View Controller-->
+        <scene sceneID="OkJ-XG-Slk">
+            <objects>
+                <viewController storyboardIdentifier="NextPost" id="Crm-o8-tLA" customClass="NextPostViewController" customModule="instaMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nsv-H4-o1b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mav-v1-ouM">
+                                <rect key="frame" x="57" y="187" width="300" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="次の写真を追加する" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="AddPhotoButton:" destination="Crm-o8-tLA" eventType="touchUpInside" id="T4L-b5-bqC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e65-eR-S4h">
+                                <rect key="frame" x="57" y="310" width="300" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="写真投稿を終了する" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="CancelButton:" destination="Crm-o8-tLA" eventType="touchUpInside" id="A81-xh-Vkh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qcN-kw-7s4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ry-Va-Zlf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2246.376811594203" y="817.63392857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dvz-a7-vwO">
@@ -341,6 +374,17 @@
                                     <action selector="Cancel:" destination="NUW-hA-iWb" eventType="touchUpInside" id="QHS-gd-C2Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYj-AY-pMc">
+                                <rect key="frame" x="179.5" y="503" width="55" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="YEy-up-HYH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" image="photo" catalog="system"/>
+                                <connections>
+                                    <action selector="scrollView:" destination="NUW-hA-iWb" eventType="touchUpInside" id="s6h-Fk-geR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kgp-6i-9SQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -358,6 +402,8 @@
                             <constraint firstItem="cah-qL-9rP" firstAttribute="leading" secondItem="kgp-6i-9SQ" secondAttribute="leading" constant="10" id="UiZ-oI-phe"/>
                             <constraint firstItem="JIO-4k-IK7" firstAttribute="centerX" secondItem="xwu-Bq-qrG" secondAttribute="centerX" id="YuU-uB-M0c"/>
                             <constraint firstItem="kgp-6i-9SQ" firstAttribute="trailing" secondItem="OdT-4i-GJq" secondAttribute="trailing" constant="20" id="ZEu-uD-8r0"/>
+                            <constraint firstItem="EYj-AY-pMc" firstAttribute="top" secondItem="cah-qL-9rP" secondAttribute="bottom" constant="25" id="hDW-Gr-tZN"/>
+                            <constraint firstItem="EYj-AY-pMc" firstAttribute="centerX" secondItem="xwu-Bq-qrG" secondAttribute="centerX" id="iZh-R6-PeX"/>
                             <constraint firstItem="JIO-4k-IK7" firstAttribute="top" secondItem="OdT-4i-GJq" secondAttribute="bottom" constant="40" id="lAM-ns-f0S"/>
                             <constraint firstItem="OdT-4i-GJq" firstAttribute="leading" secondItem="kgp-6i-9SQ" secondAttribute="leading" constant="20" id="o6J-25-BpH"/>
                             <constraint firstItem="JIO-4k-IK7" firstAttribute="leading" secondItem="kgp-6i-9SQ" secondAttribute="leading" constant="20" id="otV-Lp-lVx"/>
@@ -376,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHz-vy-GJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-887" y="1507"/>
+            <point key="canvasLocation" x="-888.40579710144937" y="1506.6964285714284"/>
         </scene>
         <!--Photo Scroll View Controller-->
         <scene sceneID="Dfd-c4-RZ9">
@@ -386,14 +432,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2h7-gn-C1E">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2h7-gn-C1E">
                                 <rect key="frame" x="0.0" y="44" width="414" height="791"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="10" translatesAutoresizingMaskIntoConstraints="NO" id="c1V-63-ARZ">
-                                        <rect key="frame" x="146" y="695" width="123" height="28"/>
+                                        <rect key="frame" x="96" y="617" width="223" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="cwb-dR-92B"/>
@@ -477,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMK-Mx-fHL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1713.0434782608697" y="1506.6964285714284"/>
+            <point key="canvasLocation" x="-2255" y="1048"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="bWS-HE-pBT">
@@ -625,6 +673,7 @@
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="setting" width="25" height="25"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
